@@ -10,6 +10,10 @@ export default {
         serif: ["Inria Serif", ...defaultTheme.fontFamily.serif]
       },
 
+      backgroundImage: {
+        'custom-image': 'url("background.svg")',
+      },
+
     },
   },
   plugins: [],
