@@ -11,7 +11,7 @@ export default {
       },
 
       backgroundImage: {
-        'custom-image': 'url("background.svg")',
+        'custom-image': 'url("/background.svg")',
       },
 
     },
