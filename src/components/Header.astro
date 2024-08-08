@@ -2,10 +2,17 @@
 
 ---
 
-<header class="grid grid-flow-col items-center justify-between p-6">
- <h3 class="font-semibold font-serif text-2xl">Bedford Software</h3>
+<header class="grid grid-flow-col items-center justify-between sm:px-40 p-4">
+ <h3 class="font-semibold sm:text-2xl text-xl">Bedford Software</h3>
 
- <div class="flex gap-16 font-semibold text-zinc-700 items-center">
+ <div class="sm:hidden flex">
+  <input type="checkbox" id="title1" class="peer hidden" />
+  <label for="title1" class="block p-2 pl-6 mb-1 cursor-pointer transition ease-in-out duration-500 w-fit">X</label>
+  <div class="content bg-red-200 p-3 rounded peer-checked:block hidden transition duration-300 ease-in-out">
+   <p>Your content goes here.</p>
+  </div>
+ </div>
+ <div class="hidden gap-16 font-semibold text-zinc-700 items-center sm:flex">
   <a href="#" class="group transition duration-300">
    About
    <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
@@ -23,8 +30,9 @@
 
   <a
    href="/contact"
-   class="py-2 px-5 items-center gap-x-2 text-base font-semibold rounded-lg shadow-sm bg-sky-600 text-white disabled:pointer-events-none hover:bg-sky-800 hover:cursor-pointer hover:transition duration-500 w-fit"
-   >Contact</a
+   type="button"
+   class="appearance-none inline-flex hover:shadow-2xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-sky-600 text-white py-2 px-4 rounded-2xl cursor-pointer w-fit"
+   ><span class="w-full font-semibold text-base">Contact</span></a
   >
  </div>
 </header>
