@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Thank You! - Bedford Software">
+ <main class="min-w-full grid grid-flow-row sm:py-10 sm:px-40 p-4 pb-20 gap-10">
+  <h1 class="text-3xl font-semibold">Thank You for Reaching Out!</h1>
+  <div class="grid gap-10 sm:w-1/2">
+   <div class="grid gap-2">
+    <label for="send-email__name" class="font-semibold">Name</label>
+    <input
+     type="text"
+     name="name"
+     id="send-email__name"
+     required
+     disabled
+     class="h-10 border-2 border-slate-200 rounded-lg drop-shadow-sm px-2 bg-slate-200"
+    />
+   </div>
+   <div class="grid gap-2">
+    <label for="send-email__business" class="font-semibold">Business</label>
+    <input
+     type="text"
+     name="business"
+     id="send-email__business"
+     required
+     disabled
+     class="h-10 border-2 border-slate-200 rounded-lg drop-shadow-sm px-2 bg-slate-200"
+    />
+   </div>
+   <div class="grid sm:gap-2 sm:grid-cols-2 gap-10">
+    <div class="grid gap-2">
+     <label for="send-email__email" class="font-semibold">Email Address</label>
+     <input
+      type="email"
+      name="email"
+      id="send-email__email"
+      required
+      disabled
+      class="h-10 border-2 border-slate-200 rounded-lg drop-shadow-sm px-2 bg-slate-200"
+     />
+    </div>
+    <div class="grid gap-2">
+     <label for="send-email__phone" class="font-semibold">Phone Number</label>
+     <input
+      type="text"
+      name="phone"
+      id="send-email__phone"
+      required
+      disabled
+      class="h-10 border-2 border-slate-200 rounded-lg drop-shadow-sm px-2 bg-slate-200"
+     />
+    </div>
+   </div>
+   <!-- <div class="grid">
+    <label for="send-email__subject" class="font-semibold">Subject:</label>
+    <input type="text" name="subject" id="send-email__subject" required class="h-10 border-2 border-slate-200 rounded-lg drop-shadow-sm px-2" />
+   </div> -->
+   <div class="grid">
+    <label for="send-email__message" class="font-semibold">Message:</label>
+    <textarea
+     disabled
+     name="message"
+     id="send-email__message"
+     class="p-2 h-20 border-2 border-slate-200 rounded-lg drop-shadow-sm bg-slate-200 resize-none"></textarea>
+   </div>
+   <div>
+    <button
+     disabled
+     class="drop-shadow-sm appearance-none inline-flex transition-all duration-300 items-center group space-x-2.5 bg-slate-300 text-white py-2 px-4 rounded-2xl cursor-not-allowed w-fit font-semibold"
+    >
+     <span>Sucessfully Sent! ✅</span></button
+    >
+   </div>
+  </div>
+ </main>
+</Layout>
