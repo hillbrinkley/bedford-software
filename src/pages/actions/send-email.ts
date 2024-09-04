@@ -22,7 +22,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   // an error if it fails.
   try {
     const toCustomerHtml = `<div>Thank you, ${name}. <br/><br/> We have recieved your request! <br/> We will be in touch soon. <br/><br/> Yours truly, <br/> Brinkley Hill <br/> Bedford Software LLC</div>`;
-    const toManagerHtml = `<div>${name} ${business} ${email} ${phone}</div>`
+    const toManagerHtml = `<div>Name:${name}<br/>Business: ${business}<br/> Email: ${email}<br/> Phone: ${phone}<br/>Message: ${message}</div>`
     await sendEmail({ to: "brink@bedfordsoftware.com", subject: `${name} from ${business} is reaching out!`, html: toManagerHtml });
 
     await sendEmail({ to: email, subject: `Thank you for reaching out!`, html: toCustomerHtml });
