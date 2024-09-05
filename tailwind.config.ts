@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        'bedford-blue': '#378FDF'
+        'bedford-blue': '#2079CB'
       },
       fontFamily: {
         sans: ["Plus Jakarta Sans Variable", ...defaultTheme.fontFamily.sans],
