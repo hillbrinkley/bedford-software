@@ -1,7 +1,52 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import meImage from "../../public/me.jpeg";
+import { Image } from "astro:assets";
 ---
 
-<Layout title="Contact Us - Bedford Software">
- <h1>about page</h1>
+<Layout title="About Us - Bedford Software">
+ <main class="min-w-full flex-1 sm:py-10 sm:px-40 p-4 pb-20">
+  <h1 class="text-3xl font-semibold pb-8">About Us</h1>
+  <div class="grid sm:grid-flow-col sm:grid-cols-3 grid-cols-1 grid-flow-row gap-4">
+   <div class="grid place-content-center">
+    <Image
+     src={meImage}
+     alt="A photo of Brinkley Hill, owner of Bedford Software."
+     height={500}
+     class={"rounded-xl sm:hover:scale-[105%] transition-all duration-300 sm:hover:shadow-xl shadow-sm"}
+    />
+   </div>
+   <div class="flex flex-col col-span-2 pl-4 border-bedford-blue border-l-2 gap-2">
+    <span class="font-semibold text-bedford-blue text-sm">Bedford Software</span>
+    <span>
+     Hi, I'm Brinkley, the owner and sole developer of Bedford Software. I founded Bedford Software after realizing that many local small businesses
+     lacked well-designed, regularly maintained websites, which are essential for establishing a strong online presence.
+    </span>
+    <span>
+     I've been coding websites since middle school. Instead of relying on cookie-cutter templates, I take pride in handcrafting each site to perfectly
+     match the unique goals and identity of the business. Whether you need a sleek landing page or a more complex platform, I focus on delivering
+     clean, functional designs without the unnecessary fluff.
+    </span>
+    <span
+     >We also understand that not every business has the budget to invest thousands upfront in a new website. That's why we offer both lump-sum and
+     month-to-month pricing options. Our month-to-month plan has become a popular choice for growing businesses as it provides flexibility while still
+     ensuring consistent & professional web management.
+    </span>
+    <span>We're passionate about helping businesses of all sizes build a digital foundation that grows with them.</span>
+   </div>
+  </div>
+  <a
+   href="/contact"
+   type="button"
+   class="appearance-none inline-flex hover:shadow-xl transition-all duration-300 hover:scale-105 items-center group space-x-2.5 bg-bedford-blue text-white py-3 px-5 rounded-2xl cursor-pointer w-fit mt-8"
+   ><span class="w-full font-semibold text-base">Let's get in touch!</span><svg
+    class="inline-block h-6"
+    viewBox="0 0 24 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    ><path d="M3 12.4999H21L14 19.4999M14 5.5L18 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    ></path></svg
+   ></a
+  >
+ </main>
 </Layout>
