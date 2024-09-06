@@ -13,6 +13,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   const phone = formData.get("phone") as string | null;
   const message = formData.get("message") as string | null;
 
+  const honeypot = formData.get("username") as string | null;
+
   // Throw an error if we're missing any of the needed fields.
   if (!name || !business || !email || !phone || !message) {
     throw new Error("Missing required fields");
@@ -21,11 +23,13 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   // Try to send the email using a `sendEmail` function we'll create next. Throw
   // an error if it fails.
   try {
-    const toCustomerHtml = `<div>Thank you, ${name}. <br/><br/> We have recieved your request! <br/> We will be in touch soon. <br/><br/> Yours truly, <br/> Brinkley Hill <br/> Bedford Software LLC</div>`;
-    const toManagerHtml = `<div>Name: ${name}<br/>Business: ${business}<br/> Email: ${email}<br/> Phone: ${phone}<br/>Message: ${message}</div>`
-    await sendEmail({ to: "brink@bedfordsoftware.com", subject: `${name} from ${business} is reaching out!`, html: toManagerHtml });
+    if (!honeypot) {
+      const toCustomerHtml = `<div>Thank you, ${name}. <br/><br/> We have recieved your request! <br/> We will be in touch soon. <br/><br/> Yours truly, <br/> Brinkley Hill <br/> Bedford Software LLC</div>`;
+      const toManagerHtml = `<div>Name: ${name}<br/>Business: ${business}<br/> Email: ${email}<br/> Phone: ${phone}<br/>Message: ${message}</div>`
+      await sendEmail({ to: "brink@bedfordsoftware.com", subject: `${name} from ${business} is reaching out!`, html: toManagerHtml });
 
-    await sendEmail({ to: email, subject: `Thank you for reaching out!`, html: toCustomerHtml });
+      await sendEmail({ to: email, subject: `Thank you for reaching out!`, html: toCustomerHtml });
+    }
   } catch (error) {
     throw new Error("Failed to send email");
   }
