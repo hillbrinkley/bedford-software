@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import { colorForIntegration } from "astro/runtime/client/dev-toolbar/apps/utils/icons.js";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {

@@ -31,7 +31,7 @@ export async function sendEmail(options: SendEmailOptions): Promise<Transporter>
 }
 
 async function getEmailTransporter(): Promise<Transporter> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     if (!import.meta.env.RESEND_API_KEY) {
       throw new Error("Missing Resend configuration");
     }
