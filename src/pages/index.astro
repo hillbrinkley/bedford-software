@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import homeImage from "../assests/home.svg";
 // import Pricing from "../components/Pricing.astro";
 
 // const data = await Astro.request.formData();
@@ -30,9 +28,9 @@ import homeImage from "../assests/home.svg";
     ></a
    >
   </div>
-  <div class="sm:grid hidden place-content-center justify-end">
-   <Image src={homeImage} alt="A computer, tablet, and a smartphone representing responsive web design." height={700} />
-  </div>
+  <!-- <div class="sm:grid hidden place-content-center justify-end bg-red-200">
+   <HomeImage alt="A computer, tablet, and a smartphone representing responsive web design." />
+  </div> -->
  </main>
  <!-- <Pricing /> -->
 </Layout>
