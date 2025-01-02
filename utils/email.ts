@@ -3,7 +3,7 @@ import { createTransport, type Transporter } from "nodemailer";
 type SendEmailOptions = {
   /** Email address of the recipient */
   to: string;
-  /** Subject line of the email */
+  /** Subject line of the email*/
   subject: string;
   /** Message used for the body of the email */
   html: string;
@@ -33,7 +33,7 @@ export async function sendEmail(options: SendEmailOptions): Promise<Transporter>
 async function getEmailTransporter(): Promise<Transporter> {
   return new Promise((resolve) => {
     if (!import.meta.env.RESEND_API_KEY) {
-      throw new Error("Missing Resend configuration");
+      throw new Error("Incorrect Resend API key configuration");
     }
     const transporter = createTransport({
       host: "smtp.resend.com",
